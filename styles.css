@@ -29,7 +29,16 @@ body{
     gap: 10px;
 }
 
-.score{
+h3, h4{
+    text-align: center;
+}
+
+.scoreBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.rightAndLeft{
     display: flex;
     gap: 20px;
 }

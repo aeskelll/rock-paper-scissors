@@ -3,27 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>RockPaperScissors</title>
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <h1>Rock Paper Scissors</h1>
-        <button onclick="game()">New game</button>
+        <button class="startGame">New game</button>
         <div>
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
         </div>
-        
-        <h2>Score</h2>
-        <div class="score">
-            <div>
-                <h3>player:</h3>
-                <p></p>
-            </div>
-            <div>
-                <h3>computer:</h3>
-                <p></p>
+        <div class="scoreBox" style="display: none;">
+            <div class="yourChoice">sdsd</div>
+            <div class="computerChoice">sdsd</div>
+            <h1 style="display: none;" class="winOrLost">sdcssd</h1>
+            <h3>Score</h3>
+            <div class="rightAndLeft">
+                <div>
+                    <h4>Player</h4>
+                    <p class="pScore">0</p>
+                </div>
+                <div>
+                    <h4>Computer</h4>
+                    <p class="cScore">0</p>
+                </div>
             </div>
         </div>
     </body>
