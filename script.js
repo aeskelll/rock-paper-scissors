@@ -5,6 +5,8 @@ const pScore = document.querySelector(".pScore");
 const cScore = document.querySelector(".cScore");
 const winOrLost = document.querySelector(".winOrLost");
 const myArray = ["rock", "paper", "scissors"];
+const plChoice = document.querySelector(".yourChoice");
+const compChoice = document.querySelector(".computerChoice");
 
 //this function returns string
 function getComputerChoice() {
@@ -73,6 +75,8 @@ rock.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("rock", computerSelection);
   applyNewScore();
+  plChoice.textContent = `Your choice: rock`
+  compChoice.textContent = `Computer choice: ${computerSelection}`;
 });
 
 const paper = document.querySelector(".paper");
@@ -81,6 +85,8 @@ paper.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("paper", computerSelection);
   applyNewScore();
+  plChoice.textContent = `Your choice: paper`
+  compChoice.textContent = `Computer choice: ${computerSelection}`;
 });
 
 const scissors = document.querySelector(".scissors");
@@ -89,4 +95,6 @@ scissors.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("scissors", computerSelection);
   applyNewScore();
+  plChoice.textContent = `Your choice: scissors`
+  compChoice.textContent = `Computer choice ${computerSelection}`;
 });
