@@ -1,3 +1,4 @@
+//variables
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection;
@@ -7,14 +8,15 @@ const winOrLost = document.querySelector(".winOrLost");
 const myArray = ["rock", "paper", "scissors"];
 const plChoice = document.querySelector(".yourChoice");
 const compChoice = document.querySelector(".computerChoice");
+const playButton = document.querySelector(".startGame");
 
-//this function returns string
+//returns random choice of string from "myArray" array
 function getComputerChoice() {
   let computerChoice = myArray[Math.floor(Math.random() * myArray.length)];
   return computerChoice;
 }
 
-//this function play one round
+//add score to winner after on round
 function playRound(playerselection, computerSelection) {
   console.log(computerSelection);
   if (
@@ -36,8 +38,7 @@ function playRound(playerselection, computerSelection) {
   }
 }
 
-//.startGame button resets a score and starts new game
-const playButton = document.querySelector(".startGame");
+//.startGame button 1)resets a score 2)starts new game 3)turn on disabled buttons
 playButton.addEventListener("click", () => {
   playerScore = 0;
   computerScore = 0;
@@ -50,7 +51,7 @@ playButton.addEventListener("click", () => {
   document.querySelector(".scoreBox").style.display = "block";
 });
 
-//update fresh score and declare a winner
+//1)update fresh score 2)declare a winner 3)disable buttons
 function applyNewScore() {
   pScore.textContent = playerScore;
   cScore.textContent = computerScore;
@@ -75,7 +76,7 @@ rock.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("rock", computerSelection);
   applyNewScore();
-  plChoice.textContent = `Your choice: rock`
+  plChoice.textContent = `Your choice: rock`;
   compChoice.textContent = `Computer choice: ${computerSelection}`;
 });
 
@@ -85,7 +86,7 @@ paper.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("paper", computerSelection);
   applyNewScore();
-  plChoice.textContent = `Your choice: paper`
+  plChoice.textContent = `Your choice: paper`;
   compChoice.textContent = `Computer choice: ${computerSelection}`;
 });
 
@@ -95,6 +96,6 @@ scissors.addEventListener("click", () => {
   computerSelection = getComputerChoice();
   playRound("scissors", computerSelection);
   applyNewScore();
-  plChoice.textContent = `Your choice: scissors`
-  compChoice.textContent = `Computer choice ${computerSelection}`;
+  plChoice.textContent = `Your choice: scissors`;
+  compChoice.textContent = `Computer choice: ${computerSelection}`;
 });
